@@ -27,4 +27,17 @@ public class GameService {
     public Game showAndChoose(String string) {
         return gameRepository.showAndChoose(string);
     }
+
+    public List<Game> searchByDifficulty(int id) {
+        return gameRepository.searchByDifficulty(id);
+    }
+
+    public List<Game> showAllGames2() {
+        return gameRepository.showAllGames2();
+    }
+
+    public Game findByID(int id) {
+
+        return gameRepository.findByID(id);
+    }
 }
