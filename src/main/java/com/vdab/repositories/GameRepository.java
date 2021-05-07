@@ -43,7 +43,7 @@ public class GameRepository {
 
     }
 
-    public Game findGameByPartName(String string) {
+    public Game findGameByPartName(String string) throws NotFoundException {
 
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/games","root","P@ssw0rd")) {
             PreparedStatement preparedStatement = connection.prepareStatement("select * from game where LOWER(game_name) LIKE ? ");
@@ -59,11 +59,7 @@ public class GameRepository {
                     .price(resultSet.getDouble("price"))
                     .build();
         } catch (Exception e) {
-            System.out.println("no such game ");
-            System.out.println("--------------");
-            Main main = new Main();
-            main.findGameByPartName();
-            return null;
+          throw new NotFoundException("no such game");
         }
     }
 
@@ -115,7 +111,7 @@ public class GameRepository {
         }
     }
 
-    public Game showAndChoose(String string) {
+    public Game showAndChoose(String string) throws NotFoundException {
 
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/games","root","P@ssw0rd")) {
             PreparedStatement preparedStatement = connection.prepareStatement("select * from game as g inner join category as c on g.category_id = c.id inner join difficulty as d on g.difficulty_id = d.id where game_name LIKE ?");
@@ -131,10 +127,7 @@ public class GameRepository {
                     .build();
 
         } catch (Exception e) {
-            System.out.println("There is no such game");
-            Main main = new Main();
-            main.showAndChoose();
-            return null;
+           throw new NotFoundException("invalid");
         }
     }
 

@@ -2,6 +2,7 @@ package com.vdab.services;
 
 import com.vdab.domain.Borrower;
 import com.vdab.repositories.BorrowerRepository;
+import com.vdab.repositories.NotFoundException;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class BorrowerService {
 
     }
 
-    public List<Borrower> searchBorrowerByName(String string) {
+    public List<Borrower> searchBorrowerByName(String string) throws NotFoundException {
         return borrowerRepository.searchBorrowerByName(string);
     }
 

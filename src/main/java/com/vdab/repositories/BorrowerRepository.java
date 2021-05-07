@@ -28,7 +28,7 @@ public class BorrowerRepository {
         }
     }
 
-    public List<Borrower> searchBorrowerByName(String string) {
+    public List<Borrower> searchBorrowerByName(String string) throws NotFoundException {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/games","root","P@ssw0rd")) {
             PreparedStatement preparedStatement = connection.prepareStatement("select * from borrower where (borrower_name) LIKE ?");
             preparedStatement.setString(1,"%"+string+"%");
@@ -50,19 +50,12 @@ public class BorrowerRepository {
                 borrowerList.add(borrower);
 
             }
-            if(borrowerList.isEmpty()){
-                System.out.println("there is no such borrower");
-                Main main = new Main();
-                main.showInitialOptions();
-            }else{
-                return borrowerList;
+            if(borrowerList.isEmpty()) {
+                throw new NotFoundException("there is no such borrower");
             }
             return null;
         } catch (Exception e) {
-            System.out.println("There was no borrower like that ");
-            Main main = new Main();
-            main.showBorrowedGames();
-            return null;
+            throw new NotFoundException("there is no such borrower");
         }
 
     }

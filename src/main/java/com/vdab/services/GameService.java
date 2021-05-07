@@ -3,6 +3,7 @@ package com.vdab.services;
 import com.vdab.Main;
 import com.vdab.domain.Game;
 import com.vdab.repositories.GameRepository;
+import com.vdab.repositories.NotFoundException;
 
 import java.sql.SQLDataException;
 import java.util.List;
@@ -16,7 +17,7 @@ public class GameService {
     }
 
 
-    public Game findGameByPartName(String string) {
+    public Game findGameByPartName(String string) throws NotFoundException {
             return gameRepository.findGameByPartName(string);
     }
 
@@ -24,7 +25,7 @@ public class GameService {
         return gameRepository.showAllGames();
     }
 
-    public Game showAndChoose(String string) {
+    public Game showAndChoose(String string) throws NotFoundException {
         return gameRepository.showAndChoose(string);
     }
 
