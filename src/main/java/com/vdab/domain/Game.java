@@ -1,12 +1,16 @@
 package com.vdab.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @Data
 @SuperBuilder
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Game extends BaseEntity{
     private String gameName;
     private String editor;

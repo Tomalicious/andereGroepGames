@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - MiniGames by GameManiac</title>
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="../css/fresh-bootstrap-table.css" rel="stylesheet"/>
+    <link href="../css/demo.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table/dist/bootstrap-table.min.js"></script>
+
+    <!--  Just for demo purpose, do not include in your project   -->
+    <script src="../js/demo/gsdk-switch.js"></script>
+    <script src="../js/demo/jquery.sharrre.js"></script>
+    <script src="../js/demo/demo.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="logo-container">
+        <div class="logo">
+            <img src="https://pbs.twimg.com/profile_images/977530414343495680/Oz0zY1Iu_400x400.jpg">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="description">
+                <h2><a th:href="@{/}">MINIGAMES BY GAMEMANIAC</a></h2>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="contactcontainer">
+                <form th:action="@{savegame}" method="post">
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Game Name</label>
+                        <input class="form-control" id="gameName"
+                               placeholder="Name of the game" name="gameName">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Editor</label>
+                        <input class="form-control" id="editor"
+                               placeholder="Editor" name="editor">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Author</label>
+                        <input class="form-control" id="author"
+                               placeholder="Author" name="author">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Age</label>
+                        <input class="form-control" id="age"
+                               placeholder="range of age" name="age">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Release date</label>
+                        <input class="form-control" id="yearEdition"
+                               placeholder="Name of the game" name="yearEdition">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Minimum players</label>
+                        <input class="form-control" id="minPlayers"
+                               placeholder="Name of the game" name="minPlayers">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Maximum players</label>
+                        <input class="form-control" id="maxPlayers"
+                               placeholder="Name of the game" name="maxPlayers">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <select class="form-control" name="category">
+                            <option th:each="cat :${category}" th:text="${cat.getCategoryName()}"></option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <select class="form-control" name="difficulty">
+                            <option th:each="diff :${difficulty}" th:text="${diff.getDifficultyName()}"></option>
+                        </select>
+                    </div>
+
+                    <br>
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Play duration</label>
+                        <input class="form-control" id="playDuration"
+                               placeholder="Name of the game" name="playDuration">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="gameName" class="form-label">Price</label>
+                        <input class="form-control" id="price"
+                               placeholder="Name of the game" name="price">
+                    </div>
+
+
+
+                    <button id="submitbnt" type="submit" class="form-control btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

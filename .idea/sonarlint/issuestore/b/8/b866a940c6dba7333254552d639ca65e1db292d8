@@ -1,0 +1,7 @@
+
+[	java:S1122"FDefine and throw a dedicated exception instead of using a generic one.(áÔË´
+H
+java:S1128"-Remove this unused import 'java.util.Locale'.(åð×±ûÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(›¿äÅÿÿÿÿÿ
+I
+java:S11442"3Remove this unused private "chooseAnOption" method.(áÔË´

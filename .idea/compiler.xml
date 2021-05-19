@@ -10,5 +10,8 @@
         <module name="GamesGroupSplitProject" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="GamesGroupSplitProject" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

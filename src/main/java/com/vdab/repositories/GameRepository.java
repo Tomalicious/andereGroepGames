@@ -1,10 +1,7 @@
 package com.vdab.repositories;
 
 import com.vdab.Main;
-import com.vdab.domain.Borrower;
-import com.vdab.domain.Category;
-import com.vdab.domain.Difficulty;
-import com.vdab.domain.Game;
+import com.vdab.domain.*;
 
 import javax.swing.*;
 import java.sql.*;
@@ -149,5 +146,30 @@ public class GameRepository {
                 .price(resultSet.getDouble("price"))
                 .image(resultSet.getString("image"))
                 .build();
+    }
+
+    public void save(Game newGame, Category newCategory, Difficulty newDifficulty) throws SQLException {
+
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/games", "root", "P@ssw0rd")) {
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into game (game_name, editor , author, year_edition, age , min_players , max_players , play_duration , price , category_id , difficulty_id) values (?,?,?,?,?,?,?,?,?, ? ,?) ");
+            preparedStatement.setString(1, newGame.getGameName() );
+            preparedStatement.setString(2, newGame.getEditor() );
+            preparedStatement.setString(3, newGame.getAuthor() );
+            preparedStatement.setInt(4, newGame.getYearEdition() );
+            preparedStatement.setString(5, newGame.getAge() );
+            preparedStatement.setInt(6, newGame.getMinPlayers() );
+            preparedStatement.setInt(7, newGame.getMaxPlayers() );
+            preparedStatement.setString(8, newGame.getPlayDuration() );
+            preparedStatement.setDouble(9, newGame.getPrice() );
+            preparedStatement.setInt(10, newCategory.getId() );
+            preparedStatement.setInt(11, newDifficulty.getId() );
+
+            preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.getResultSet();
+            List<Borrow> borrowList = new ArrayList<>();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

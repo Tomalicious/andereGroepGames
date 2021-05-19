@@ -1,11 +1,14 @@
 package com.vdab.services;
 
 import com.vdab.Main;
+import com.vdab.domain.Category;
+import com.vdab.domain.Difficulty;
 import com.vdab.domain.Game;
 import com.vdab.repositories.GameRepository;
 import com.vdab.repositories.NotFoundException;
 
 import java.sql.SQLDataException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class GameService {
@@ -40,6 +43,11 @@ public class GameService {
     public Game findByID(int id) {
 
         return gameRepository.findByID(id);
+    }
+
+    public void save(Game newGame , Difficulty newDifficulty , Category newCategory) throws SQLException {
+        gameRepository.save(newGame , newCategory , newDifficulty);
+
     }
 
 }
