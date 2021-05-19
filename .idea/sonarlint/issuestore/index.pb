@@ -1,12 +1,4 @@
 
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-b
-2src/main/java/com/vdab/services/BorrowService.java,8\f\8fc358ce260df9b4bdd37c8a4dbf3f2fcf433a48
-d
-4src/main/java/com/vdab/services/CategoryService.java,8\3\83f5f2fbe0f1851421ce2421ed936d5ceea6fa6c
-i
-9src/main/java/com/vdab/repositories/BorrowRepository.java,1\8\18affa20d58b55bb2456080f95e1e082fe16622a
 W
 'src/main/java/com/vdab/domain/Game.java,7\5\759f2b34b034a83ac91895d168ac9be183be7097
 ]
@@ -15,34 +7,14 @@ W
 +src/main/java/com/vdab/domain/Category.java,5\7\57a79f643ea762f8dc9f334eb9ceb886ec941139
 [
 +src/main/java/com/vdab/domain/Borrower.java,2\a\2a3ed30f33c218f357cc4528276a9e9b3592e8e9
-Y
-)src/main/java/com/vdab/domain/Borrow.java,5\3\5336383f4b1ff09e6e49b68d1ec94bdec0d486a4
 ]
 -src/main/java/com/vdab/domain/BaseEntity.java,7\f\7fd62795a4d6ca1658543f303ee5c9949787e2c5
-k
-;src/main/java/com/vdab/repositories/CategoryRepository.java,5\e\5e5c4590c3f3cfe5f357a4e910a2be658662de7e
-k
-;src/main/java/com/vdab/repositories/BorrowerRepository.java,6\8\68c85cbf8bc981e144cae96be1011fa906091d01
-d
-4src/main/java/com/vdab/services/BorrowerService.java,4\6\463dea9c8c7ad6b159a75fbc971e01250b608b69
-b
-2src/main/java/com/vdab/commandpattern/Command.java,6\e\6e11cce4efe93259e6e25ef1a3384a6a8ef57a6a
 h
 8src/main/java/com/vdab/commandpattern/FirstBorrower.java,4\6\46f82ca68f177a2cf2fe9fb1b2d558b4ad2f134c
 g
 7src/main/java/com/vdab/commandpattern/GameOfChoice.java,d\3\d339e04a24aa3e48ae031ab284eda81b64f1de5c
-g
-7src/main/java/com/vdab/repositories/GameRepository.java,7\d\7d23977f11bfb9123d2bd15dea5810a4bfc14c68
-`
-0src/main/java/com/vdab/services/GameService.java,4\1\41df20a1bfcb0232b57321d3f96354ef2c514320
-a
-1src/main/java/com/vdab/commandpattern/Invoke.java,c\0\c0af26f43e599fe8804e22e8fc2b942ea0aa8e27
 c
 3src/main/java/com/vdab/commandpattern/ListBorr.java,5\7\57c3377049f1ca0ce7e7107e0aadb614c3633b86
-P
- src/main/java/com/vdab/Main.java,b\8\b866a940c6dba7333254552d639ca65e1db292d8
-j
-:src/main/java/com/vdab/repositories/NotFoundException.java,6\8\688c1b67918c821731df7a6144d98b37719d7df2
 f
 6src/main/java/com/vdab/commandpattern/QuitCommand.java,2\0\20e1e0a29dd634284fbabcec27ff8e0ded76efae
 d
@@ -63,3 +35,5 @@ e
 5src/main/java/com/vdab/commandpattern/ShowFiGame.java,b\9\b9fa20bf37aa9edf468ccbb498af6a8b18d2888c
 l
 <src/main/java/com/vdab/commandpattern/ShowListAndChoose.java,b\9\b9dfa60601fd0f4fcb52cae8396e9c2b34666e13
+Y
+)src/main/java/com/vdab/domain/Borrow.java,5\3\5336383f4b1ff09e6e49b68d1ec94bdec0d486a4

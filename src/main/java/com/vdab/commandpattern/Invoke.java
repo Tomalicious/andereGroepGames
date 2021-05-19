@@ -2,6 +2,8 @@ package com.vdab.commandpattern;
 
 import lombok.Getter;
 
+// enum is een lijst
+
 @Getter
 
 public enum Invoke {

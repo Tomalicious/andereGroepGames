@@ -53,7 +53,7 @@ public class BorrowerRepository {
             if(borrowerList.isEmpty()) {
                 throw new NotFoundException("there is no such borrower");
             }
-            return null;
+            return borrowerList;
         } catch (Exception e) {
             throw new NotFoundException("there is no such borrower");
         }
@@ -91,8 +91,15 @@ public class BorrowerRepository {
             ResultSet resultSet = preparedStatement.getResultSet();
             resultSet.next();
                 Borrower borrower = Borrower.builder()
-                        .id(resultSet.getInt("id"))
                         .borrowerName(resultSet.getString("borrower_name"))
+                        .city(resultSet.getString("city"))
+                        .busNumber(resultSet.getString("bus_number"))
+                        .email(resultSet.getString("email"))
+                        .houseNumber(resultSet.getString("house_number"))
+                        .postalCode(resultSet.getString("postcode"))
+                        .street(resultSet.getString("street"))
+                        .telephone(resultSet.getString("telephone"))
+                        .id(resultSet.getInt("id"))
                         .build();
             return borrower;
 

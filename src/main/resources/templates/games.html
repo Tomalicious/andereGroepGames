@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>My games </h1>
+
+<span th:text="${address}"></span>
+<br>
+<span th:text="${game.getGameName()}"></span>
+<span th:text="${game.getAuthor()}"></span>
+<span th:text="${game.getAge()}"></span>
+
+<ul>
+    <li th:each="mygame:${allGames}" th:text="${mygame.getGameName()}"></li>
+</ul>
+
+</body>
+</html>
